@@ -1,4 +1,7 @@
 Refinery::Core::Engine.routes.draw do
+  get 'refinery/memberships/members/:id/disable' => 'members#disable', :as => :memberships_admin_member
+  get 'refinery/memberships/members' => 'members#index', :as => :memberships_admin_members
+
   scope :module => :memberships do
 
     # Frontend routes
@@ -14,11 +17,10 @@ Refinery::Core::Engine.routes.draw do
 
     end
 
-
-
     # Admin routes
     namespace :admin, :path => 'refinery/memberships' do
       resources :memberships, :only => :index do
+        get :foo
         collection do
           get :settings
           put :save_settings
