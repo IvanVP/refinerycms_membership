@@ -1,9 +1,5 @@
 Refinery::Core::Engine.routes.draw do
-  get 'refinery/memberships/members/:id/disable' => 'members#disable', :as => :memberships_admin_member
-  get 'refinery/memberships/members' => 'members#index', :as => :memberships_admin_members
-
   scope :module => :memberships do
-
     # Frontend routes
     resources :members, :except => [:destroy] do
       collection do
@@ -20,7 +16,6 @@ Refinery::Core::Engine.routes.draw do
     # Admin routes
     namespace :admin, :path => 'refinery/memberships' do
       resources :memberships, :only => :index do
-        get :foo
         collection do
           get :settings
           put :save_settings
@@ -50,5 +45,9 @@ Refinery::Core::Engine.routes.draw do
       resources :membership_email_parts, :except => :index
     end
 
+    # Duplicate route that can get called by Refinery code unintentionally
+    scope :module => :admin do
+      match '/refinery/memberships/members' => 'members#index', :as => :memberships_admin_members
+    end
   end
 end

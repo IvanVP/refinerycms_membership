@@ -9,7 +9,8 @@ module Refinery
           :plural_name => "members",
           :conditions => {:seen => false},
           :title_attribute => :full_name,
-          :xhr_paging => true
+          :xhr_paging => true,
+          :redirect_to_url => "refinery.admin_memberships_path" # Refinery::Crud generates memberships_admin_member_path
 
         before_filter do
           columns = [[:last_name, :first_name], [:organization], [:email], [:created_at]]
