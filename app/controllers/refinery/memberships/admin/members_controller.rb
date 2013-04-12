@@ -52,7 +52,11 @@ module Refinery
       			when 'unconfirmed' then find_all_members ['confirmation_token IS NOT NULL']
       			end
       		end
-      		paginate_all_members
+
+					paginate_all_members
+
+					@members = @members.with_query(params[:search]) if params[:search].present?
+
       		render :partial => 'members' if request.xhr?
       	end
 
