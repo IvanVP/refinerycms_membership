@@ -3,7 +3,7 @@ module Refinery
     class MembersController < ::ApplicationController
 
       # Protect these actions behind member login - do we need to check out not signing up when signed in?
-      before_filter :redirect?, :except => [:new, :create, :login, :index, :welcome, :activate]
+      before_filter :redirect?, :except => [:new, :create, :login, :index, :activate]
 
       before_filter :find_page, :except => [:activate, :login]
 
@@ -44,7 +44,7 @@ module Refinery
 
         if @member.save
           MembershipMailer::deliver_member_created(@member)
-          redirect_to welcome_members_path
+          redirect_to refinery.root_path
         else
           @member.errors.delete(:username) # this is set to email
           render :action => :new
@@ -60,7 +60,9 @@ module Refinery
       end
 
       def welcome
-        find_page('/members/welcome')
+        if is_admin? || (current_refinery_user && current_refinery_user.accepted?)
+          find_page('/members/welcome')
+        end
       end
 
       def activate
@@ -78,7 +80,7 @@ module Refinery
 
       def redirect?
         if current_refinery_user.nil?
-          redirect_to new_user_session_path
+          redirect_to login_members_path(:redirect => request.fullpath, :member_login => true)
         end
       end
 
@@ -86,6 +88,10 @@ module Refinery
         uri = uri ? uri : request.fullpath
         uri.gsub!(/\?.*/, '')
         @page = Page.find_by_link_url(uri, :include => [:parts])
+      end
+
+      def is_admin?
+        refinery_user? && current_refinery_user.has_role?(:superuser)
       end
     end
   end

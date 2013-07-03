@@ -5,11 +5,11 @@ module Refinery
         include Admin::MembershipsHelper
 
         crudify :'refinery/memberships/member',
-          :singular_name => "member",
-          :plural_name => "members",
-          :conditions => {:seen => false},
+          :singular_name   => "member",
+          :plural_name     => "members",
+          :conditions      => {:seen => false},
           :title_attribute => :full_name,
-          :xhr_paging => true,
+          :xhr_paging      => true,
           :redirect_to_url => "refinery.admin_memberships_path" # Refinery::Crud generates memberships_admin_member_path
 
         before_filter do
