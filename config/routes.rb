@@ -48,6 +48,7 @@ Refinery::Core::Engine.routes.draw do
     # Duplicate route that can get called by Refinery code unintentionally
     scope :module => :admin do
       match '/refinery/memberships/members' => 'members#index', :as => :memberships_admin_members
+      match '/refinery/memberships/members/:id' => 'members#show', :as => :memberships_admin_member
     end
   end
 end
