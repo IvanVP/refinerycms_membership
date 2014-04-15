@@ -12,21 +12,14 @@ Refinery CMS version 2.0.3 or above.
 Open up your ``Gemfile`` and add at the bottom this line:
 
 ```ruby
-gem 'refinerycms-memberships', :git => 'git://github.com/sbeam/refinerycms_membership.git', :branch => '2.0-stable'
+gem 'refinerycms-memberships', :git => 'https://github.com/IvanVP/refinerycms_membership.git'
 ```
 
-Now, run ``bundle install``
+Now, run 
 
-Next, to install the memberships plugin run:
-
+    bundle install
     rails generate refinery:memberships
-
-Run database migrations:
-
     rake db:migrate
-
-Finally seed your database and you're done.
-
     rake db:seed
 
 

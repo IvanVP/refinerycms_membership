@@ -1,0 +1,141 @@
+ru:
+  refinery:
+    shared:
+      admin:
+        image_picker:
+          image: изображение
+    plugins:
+      refinerycms_memberships:
+        title: Членство
+    members:
+      shared:
+        account: Кабинет
+        profile: Профиль
+        organization: Группа
+    admin:
+      memberships_settings: Настройки
+      memberships:
+        new_members: Новые пользователи
+        no_new_members: Нет новых пользователей
+        settings_admin_notification:
+          example: "Введите свой email, например: jack@work.com, jill@office.com"
+          hint: "Refinery пошлет email-оповещение, когда пользователь зарегистрируется"
+        settings:
+          signup_defaults: Основные
+          signup_confirmation: Потдверждение регистрации
+          no_confirmation: Без подтверждения
+          email_confirmation: Подтверждение по email
+          admin_confirmation: Подтверждение администратором
+          membership_expiration: Срок действия членства
+          no_expiration: Бессрочное
+          timed_expiration: Определенный срок
+          default_expiration_in: Срок членства по умолчанию
+          default_groups: Группы для пользователей по умолчанию
+          assign_new_users_to_the_selected_groups: Новые пользователи принадлежат по умолчанию выбранной группе
+          no_groups_found: Не найдено групп
+      roles:
+        delete: Удалить группу
+        no_roles_yet: Роли не созданы
+        edit: Редактировать группу
+        new_role: Новая группа
+        roles_administration: Администрирование группы
+      members:
+        accept: Подтвердить регистрацию пользователя
+        reject: Отменить регистрацию пользователя
+        edit: Редактировать пользователя
+        delete: Удалить пользователя
+        member_until: Активен до
+        membership_expired: Регистрация заканчивается
+        not_yet_member: Не активирован
+        activate_member_for: Активировать пользователя
+        account_active: Активный пользователь
+        new_account: Новый пользователь
+        account_disabled: Неактивный пользователь
+        account_expired: Срок членства пользователя закончен
+        account_rejected: Пользователю отказано в регистрации
+        account_not_activated: Регистрация не активирована
+        disable: Деактивировать пользователя
+        enable: Активировать пользователя
+        delete: Удалить пользователя
+        no_members_yet: Нет зарегистрированных пользователей
+        all_members: Все пользователи
+        members_administration: Администрирование пользователей
+        account: Регистрация
+        organization: Группа
+        profile: Профиль
+        activation: Активация
+        user_roles: Группы пользователя
+        user_can_login: Пользователь может входить на сайт
+        extend: Продлить регистрацию пользователя
+        extend_membership_for: Продлить регистрацию пользователя на
+        filter_by: Фильтр
+        member_actions: Действия пользователя
+        filter:
+          all: Все
+          active: Активные
+          rejected: Отмененные
+          disabled: Деактивированные
+          unconfirmed: Неподтвержденные
+      membership_email_parts:
+        email_header: Заголовок email
+        email_footer: Подпись email
+      membership_emails:
+        member_activated: Активирована регистрация пользователя
+        member_accepted: Подтверждена регистрация пользователя
+        member_created: Пользователь создан
+        member_deleted: Пользователь удален
+        member_rejected: Пользователю отказано
+        membership_extended: Членство продлено
+        edit: Редактировать email
+        no_emails_yet: Нет писем
+        emails_administration: Администрирование email
+        membership_email: Подтверждение членства
+        email_settings: Настройки email
+        toggle_email_body_help: Показать справку
+        email_body_help_title: Справка по тексту email
+        shared_email_parts: Чати письма
+        email_body_help:
+          email_body_help: "В тексте письма можно использовать специальные теги, которые будут изменены на данные пользователя (имя фамилия и т.д.)."
+          available_tags: Доступные теги
+          user_data: Данные пользователя
+          member_until: Регистрация активна до
+          activation_url: Перейдите по ссылке для подтвержения регистрации
+        settings:
+          deliver_notifications_on: Известить пользователя в случае
+          deliver_admin_notifications_to: Известить администратора
+          email_delivery: Доставка почты
+          admin_notifications: Уведомление администратора
+          example: "Введите свой email, например: jack@work.com, jill@office.com"
+          hint: "Refinery пошлет email-оповещение, когда пользователь зарегистрируется"
+    pages:
+      admin:
+        tabs:
+          roles:
+            allow_everyone: Доступно всем
+            allow_all_members: Доступно всем зарегистрированным пользователям
+            allow_members_of: Доступно пользователям в группах
+    memberships:
+      show:
+        other: Член следующих групп
+      members:
+        login_form:
+          username: Имя пользователя или адрес электронной почты
+          password: Пароль
+          login: Логин
+        error_messages:
+          problems_in_following_fields: Ошибки в следующих полях
+        form_actions:
+          save: Сохранить
+          cancel: Отмена
+        form:
+          blank_password_keeps_current: "Оставьте поле пустым, если не хотите менять пароль"
+          state_province: Область
+          postal_code: Индекс
+        new:
+          title: Анкета пользователя
+          instructions: "Заполните, пожалуйста, информацию о себе. Вам придет сообщение на электронную почту о подтверждении регистрации."
+          submit_application: Отправить анкету
+    activerecord:
+      attributes:
+       user:
+        membership_level: Уровень членства
