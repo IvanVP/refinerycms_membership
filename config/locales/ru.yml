@@ -16,6 +16,7 @@ ru:
       memberships_settings: Настройки
       memberships:
         new_members: Новые пользователи
+        add_member: Добавить пользователя
         no_new_members: Нет новых пользователей
         settings_admin_notification:
           example: "Введите свой email, например: jack@work.com, jill@office.com"
@@ -105,8 +106,6 @@ ru:
           deliver_admin_notifications_to: Известить администратора
           email_delivery: Доставка почты
           admin_notifications: Уведомление администратора
-          example: "Введите свой email, например: jack@work.com, jill@office.com"
-          hint: "Refinery пошлет email-оповещение, когда пользователь зарегистрируется"
     pages:
       admin:
         tabs:

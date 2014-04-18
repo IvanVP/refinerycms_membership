@@ -49,6 +49,8 @@ Refinery::Core::Engine.routes.draw do
     scope :module => :admin do
       match '/refinery/memberships/members' => 'members#index', :as => :memberships_admin_members
       match '/refinery/memberships/members/:id' => 'members#show', :as => :memberships_admin_member
+      # match '/refinery/memberships/members/new' => 'members#new', :as => :new_admin_member
+      # match '/refinery/memberships/members/:id' => 'members#show', :as => :memberships_admin_member
     end
   end
 end

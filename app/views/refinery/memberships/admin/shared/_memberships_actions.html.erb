@@ -17,6 +17,8 @@
   </li>
   <% #end %>
   -->
+  
+
   <% unless section == 'memberships' %>
     <li>
       <%= link_to t('new_members', :scope => 'refinery.admin.memberships'), admin_memberships_path, :class => "new_members_icon" %>
@@ -30,6 +32,10 @@
     </li>
   <% end %>
 
+    <li>
+      <%= link_to t('add_member', :scope => 'refinery.admin.memberships'),  new_admin_member_path, :class => "add_member_icon" %>
+    </li>
+ 
 
   <% unless section == 'membership_emails' %>
     <li>

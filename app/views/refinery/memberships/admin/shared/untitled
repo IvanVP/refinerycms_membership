@@ -1,0 +1,13 @@
+<% if (section == 'members') || (section == 'memberships') %>
+  <li>
+    <%= link_to t('add_member', :scope => 'refinery.admin.members'), admin_members_path, :class => "add_member_icon" %>
+  </li>
+<% end %>
+
+
+
+
+<!--   
+      <li>
+      <%# new(member) %>
+    </li> -->

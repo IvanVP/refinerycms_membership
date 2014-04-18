@@ -60,6 +60,15 @@ module Refinery
       		render :partial => 'members' if request.xhr?
       	end
 
+        def new
+          @member = Member.new
+        end
+
+        def show
+
+          render :partial => 'members' if request.xhr?
+        end
+
         def redirect_back_or_default(default)
           params[:redirect_to_url].present? ? redirect_to(params[:redirect_to_url]) : super
         end

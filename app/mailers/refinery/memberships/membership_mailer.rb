@@ -13,6 +13,8 @@ module Refinery
           member_created_admin(member).deliver
         end
 
+        
+
         def deliver_member_activated(member)
           member_email('member_activated', member).deliver if Refinery::Setting.find_or_set("memberships_deliver_mail_on_member_activated", true)
         end
@@ -37,6 +39,10 @@ module Refinery
           member_updated_admin(member).deliver
         end
       end
+
+      def confirmation_instructions(member)
+        member_email('member_activated', member).deliver if Refinery::Setting.find_or_set("memberships_deliver_mail_on_member_activated", true)
+      end  
 
       def member_email(email, member)
         @member = member
