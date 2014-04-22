@@ -5,7 +5,6 @@
   <div id="member">
     <%= render :partial => "static_account" %>
     <%= render :partial => "static_profile" %>
-    <%= render :partial => "static_organization" %>
   </div>
   <%= link_to t('.edit_profile'), edit_members_path %>
   <%=raw @page.content_for(:body_below) if @page %>

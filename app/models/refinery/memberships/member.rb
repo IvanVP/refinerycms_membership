@@ -7,8 +7,7 @@ module Refinery
 
       validates :first_name, :last_name, :presence => true
 
-      attr_accessible :membership_level, :first_name, :last_name, :title, :organization,
-                      :street_address, :city, :province, :postal_code, :phone, :fax, :website,
+      attr_accessible :membership_level, :first_name, :last_name, 
                       :enabled, :add_to_member_until, :role_ids
 
       self.inheritance_column = :membership_level
@@ -53,8 +52,7 @@ module Refinery
       end
 
       def mail_data
-        allowed_attributes = %w(email first_name last_name title organization
-        street_address city province postal_code phone fax website)
+        allowed_attributes = %w(email first_name last_name)
         d = attributes.to_hash
         d.reject!{|k,v| !allowed_attributes.include?(k.to_s)}
         d[:activation_url] = Rails.application.routes.url_helpers.activate_members_url(:confirmation_token => self.confirmation_token) if Refinery::Setting::find_or_set('memberships_confirmation', 'admin') == 'email'

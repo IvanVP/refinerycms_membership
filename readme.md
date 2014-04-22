@@ -3,6 +3,13 @@
 __A role based membership engine for [refinerycms](http://refinerycms.com)__
 
 
+This is just another version of Memberships engine for Refinery CMS adapted for my project.
+Here are all basic functions from main Memberships engine but with some minor changes. 
+I've changed (deleted) some user fields and added possibility to add member from Admin side Membership tab.
+This was made to register users only by Admin.
+Have luck.
+
+
 ## Requirements
 
 Refinery CMS version 2.0.3 or above.

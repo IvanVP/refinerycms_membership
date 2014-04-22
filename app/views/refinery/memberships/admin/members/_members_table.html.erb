@@ -2,7 +2,6 @@
   <thead>
     <tr>
       <th data-column-id="name" align="center" class="sortable"><%= Refinery::Memberships::Member.human_attribute_name :name %></th>
-      <th data-column-id="organization" align="center" class="sortable"><%= Refinery::Memberships::Member.human_attribute_name :organization %></th>
       <th data-column-id="email" align="center" class="sortable"><%= Refinery::Memberships::Member.human_attribute_name :email %></th>
       <th data-column-id="created_at" align="center" class="sortable"><%= Refinery::Memberships::Member.human_attribute_name :created_at %></th>
       <% if Refinery::Setting::find_or_set('memberships_timed_accounts', true) %>

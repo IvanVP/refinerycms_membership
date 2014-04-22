@@ -9,7 +9,7 @@ ru:
         title: Членство
     members:
       shared:
-        account: Кабинет
+        account: Личный кабинет
         profile: Профиль
         organization: Группа
     admin:
@@ -20,7 +20,7 @@ ru:
         no_new_members: Нет новых пользователей
         settings_admin_notification:
           example: "Введите свой email, например: jack@work.com, jill@office.com"
-          hint: "Refinery пошлет email-оповещение, когда пользователь зарегистрируется"
+          hint: "Refinery пошлет email-оповещение, когда пользователь будет зарегистрирован"
         settings:
           signup_defaults: Основные
           signup_confirmation: Потдверждение регистрации
