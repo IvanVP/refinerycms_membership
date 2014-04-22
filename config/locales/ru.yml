@@ -11,7 +11,8 @@ ru:
       shared:
         account: Личный кабинет
         profile: Профиль
-        organization: Группа
+        first_name: Имя
+        last_name: Фамилия
     admin:
       memberships_settings: Настройки
       memberships:
