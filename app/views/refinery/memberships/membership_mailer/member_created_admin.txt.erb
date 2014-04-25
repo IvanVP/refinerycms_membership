@@ -1,9 +1,10 @@
 <%= controller.action_name =~ /created/ ? 'Новая регистрация' : 'Изменился пароль' %> 
- пользователя на сайте <%= Refinery::Core.site_name %>
+ пользователя на сайте <%= Refinery::Core.site_name%>
 
 Имя пользователя: <%=@member.username%>
 Email: <%=@member.email%>
 Имя: <%=@member.first_name%>
 Фамилия: <%=@member.last_name%>
+
 
 Подробная информация в панели администратора. 
