@@ -39,17 +39,17 @@ module Refinery
         end
       end
 
-      def create
-        @member = Member.new(params[:member])
+      # def create
+      #   @member = Member.new(params[:member])
 
-        if @member.save
-          MembershipMailer::deliver_member_created(@member)
-          redirect_to refinery.root_path
-        else
-          @member.errors.delete(:username) # this is set to email
-          render :action => :new
-        end
-      end
+      #   if @member.save
+      #     MembershipMailer.deliver_member_created(@member)
+      #     redirect_to profile_members_path
+      #   else
+      #     # @member.errors.delete(:username) # this is set to email
+      #     render :action => :new
+      #   end
+      # end
 
       def searching?
         params[:search].present?

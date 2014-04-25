@@ -38,10 +38,12 @@ module Refinery
         def deliver_member_profile_updated(member)
           member_updated_admin(member).deliver
         end
+
+        
       end
 
       def confirmation_instructions(member)
-        member_email('member_activated', member).deliver if Refinery::Setting.find_or_set("memberships_deliver_mail_on_member_activated", true)
+        member_email('member_activated', member).deliver
       end  
 
       def member_email(email, member)
@@ -64,7 +66,9 @@ module Refinery
       def member_created_admin(member)
         @member = member
 
-        mail :to => admins, :subject => "New user registration on #{Refinery::Core.site_name}"
+        mail :to => admins,
+             :template_name => 'member_created_admin',
+             :subject => "New user profile on #{Refinery::Core.site_name}"
       end
 
       def member_updated_admin(member)
@@ -72,7 +76,7 @@ module Refinery
 
         mail :to => admins,
              :template_name => 'member_created_admin',
-             :subject => "Updated user profile on #{Refinery::Core.site_name}"
+             :subject => "Updated user password on #{Refinery::Core.site_name}"
       end
 
       protected

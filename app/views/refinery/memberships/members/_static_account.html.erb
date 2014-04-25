@@ -1,9 +1,17 @@
 <fieldset>
-  <legend><%=t('members.shared.account')%></legend>
+  <legend>'Личный кабинет'</legend>
   <ol>
     <li>
       <label><%= @member.class.human_attribute_name :email %></label>
       <%= @member.email %>&nbsp;
+    </li>
+    <li>
+      <label><%= @member.class.human_attribute_name :first_name %></label>
+      <%= @member.first_name %>&nbsp;
+    </li>
+    <li>
+      <label><%= @member.class.human_attribute_name :last_name %></label>
+      <%= @member.last_name %>&nbsp;
     </li>
   </ol>
 </fieldset>

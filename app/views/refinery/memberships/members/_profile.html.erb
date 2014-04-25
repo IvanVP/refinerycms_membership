@@ -1,0 +1,23 @@
+<div id="member">
+  <legend><%= t('refinery.members.shared.profile')%></legend>
+  <ul>
+    <li>
+      <label><%= t('refinery.members.shared.username') %></label>
+     
+      <%= @member.username %>&nbsp;
+    </li>
+    <li>
+      <label><%= t('refinery.members.shared.email') %></label>
+      <%= @member.email %>&nbsp;
+    </li>
+ 
+    <li>
+      <label><%= t('refinery.members.shared.first_name') %></label>
+      <%= @member.first_name %>&nbsp;
+    </li>
+    <li>
+      <label><%= t('refinery.members.shared.last_name') %></label>
+      <%= @member.last_name %>&nbsp;
+    </li>
+   </ul>
+</div>

@@ -6,10 +6,10 @@
     <%= f.radio_button :value, 'no' %>
     <%= f.label :value, t('no_confirmation', :scope => 'refinery.admin.memberships.settings'), :value => 'no' %>
   </p>
-  <p class="field checkbox">
-    <%= f.radio_button :value, 'email' %>
-    <%= f.label :value, t('email_confirmation', :scope => 'refinery.admin.memberships.settings'), :value => 'email' %>
-  </p>
+  <!-- <p class="field checkbox">
+    <%# f.radio_button :value, 'email' %>
+    <%# f.label :value, t('email_confirmation', :scope => 'refinery.admin.memberships.settings'), :value => 'email' %>
+  </p> -->
   <p class="field checkbox">
     <%= f.radio_button :value, 'admin' %>
     <%= f.label :value, t('admin_confirmation', :scope => 'refinery.admin.memberships.settings'), :value => 'admin' %>
@@ -35,12 +35,16 @@
   <p class="field checkbox" <%= 'style="display: none;"'.html_safe unless is_timed %>>
     <%= f.label :value, t('default_expiration_in', :scope => 'refinery.admin.memberships.settings') %>
     <%= f.select :value, [
-      [t('months', :count => 1) ,1],
-      [t('months', :count => 2) ,2],
-      [t('months', :count => 3) ,3],
-      [t('months', :count => 4) ,4],
-      [t('months', :count => 6) ,6],
-      [t('years', :count => 1) ,12]
+      [t('1_month',:scope => 'refinery.admin.memberships.settings'),1],
+      [t('2_months',:scope => 'refinery.admin.memberships.settings') ,2],
+      [t('3_months',:scope => 'refinery.admin.memberships.settings') ,3],
+      [t('4_months',:scope => 'refinery.admin.memberships.settings') ,4],
+      [t('6_months',:scope => 'refinery.admin.memberships.settings') ,6],
+      [t('1_year',:scope => 'refinery.admin.memberships.settings') ,12],
+      [t('2_years',:scope => 'refinery.admin.memberships.settings') ,24],
+      [t('3_years',:scope => 'refinery.admin.memberships.settings') ,36],
+      [t('4_years',:scope => 'refinery.admin.memberships.settings') ,48],
+      [t('5_years',:scope => 'refinery.admin.memberships.settings') ,60]
     ], :disabled => (is_timed ? false : 'disabled') %>
   </p>
   <% end %>

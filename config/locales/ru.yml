@@ -10,9 +10,14 @@ ru:
     members:
       shared:
         account: Личный кабинет
+        username: Имя пользователя
+        email: Email
         profile: Профиль
         first_name: Имя
         last_name: Фамилия
+        edit: Редактировать
+        password: Введите пароль
+        password_confirmation: Подтверждение пароля
     admin:
       memberships_settings: Настройки
       memberships:
@@ -34,15 +39,28 @@ ru:
           default_expiration_in: Срок членства по умолчанию
           default_groups: Группы для пользователей по умолчанию
           assign_new_users_to_the_selected_groups: Новые пользователи принадлежат по умолчанию выбранной группе
-          no_groups_found: Не найдено групп
+          1_month: "1 месяц"
+          2_months: "2 месяца"
+          3_months: "3 месяца"
+          4_months: "4 месяца"
+          6_months: "6 месяцев"
+          1_year: "1 год"
+          2_years: "2 года"
+          3_years: "3 года"
+          4_years: "4 года"
+          5_years: "5 лет"
+          no_groups_found: "Не найдено групп"
       roles:
         delete: Удалить группу
+        title: Название
         no_roles_yet: Роли не созданы
         edit: Редактировать группу
         new_role: Новая группа
-        roles_administration: Администрирование группы
+        roles_administration: Администрирование групп
       members:
+        new_member: "Новый пользователь"
         accept: Подтвердить регистрацию пользователя
+        name: "Имя, Фамилия"
         reject: Отменить регистрацию пользователя
         edit: Редактировать пользователя
         delete: Удалить пользователя
@@ -63,8 +81,14 @@ ru:
         all_members: Все пользователи
         members_administration: Администрирование пользователей
         account: Регистрация
-        organization: Группа
+        username: Логин
+        email: Email
         profile: Профиль
+        first_name: Имя
+        last_name: Фамилия
+        full_name: "Имя, Фамилия"  
+        created_at: Создан
+        status: Статус
         activation: Активация
         user_roles: Группы пользователя
         user_can_login: Пользователь может входить на сайт
@@ -76,7 +100,7 @@ ru:
           all: Все
           active: Активные
           rejected: Отмененные
-          disabled: Деактивированные
+          disabled: Неактивные
           unconfirmed: Неподтвержденные
       membership_email_parts:
         email_header: Заголовок email
@@ -85,7 +109,7 @@ ru:
         member_activated: Активирована регистрация пользователя
         member_accepted: Подтверждена регистрация пользователя
         member_created: Пользователь создан
-        member_deleted: Пользователь удален
+        member_deleted: Пользователю закрыт доступ
         member_rejected: Пользователю отказано
         membership_extended: Членство продлено
         edit: Редактировать email
@@ -95,7 +119,7 @@ ru:
         email_settings: Настройки email
         toggle_email_body_help: Показать справку
         email_body_help_title: Справка по тексту email
-        shared_email_parts: Чати письма
+        shared_email_parts: Элементы email
         email_body_help:
           email_body_help: "В тексте письма можно использовать специальные теги, которые будут изменены на данные пользователя (имя фамилия и т.д.)."
           available_tags: Доступные теги
@@ -128,9 +152,7 @@ ru:
           save: Сохранить
           cancel: Отмена
         form:
-          blank_password_keeps_current: "Оставьте поле пустым, если не хотите менять пароль"
-          state_province: Область
-          postal_code: Индекс
+          blank_password_keeps_current: "При редактировании пользователя оставьте эти поля пустыми, если не хотите менять пароль"
         new:
           title: Анкета пользователя
           instructions: "Заполните, пожалуйста, информацию о себе. Вам придет сообщение на электронную почту о подтверждении регистрации."

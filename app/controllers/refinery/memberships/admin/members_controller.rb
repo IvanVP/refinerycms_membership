@@ -13,7 +13,7 @@ module Refinery
           :redirect_to_url => "refinery.admin_members_path" # Refinery::Crud generates memberships_admin_members_path
 
         before_filter do
-          columns = [[:last_name, :first_name], [:organization], [:email], [:created_at], [:member_until], [:member_until, :enabled]]
+          columns = [[:last_name, :first_name], [:username], [:email], [:created_at], [:member_until], [:member_until, :enabled]]
           params[:order_by] ||= 0
           params[:order_dir] ||= 'asc'
           unless columns[params[:order_by].to_i]
@@ -32,15 +32,33 @@ module Refinery
           end
         end
 
-        before_filter(:only => :edit) do
+        after_filter(:only => :create) do
+          MembershipMailer.deliver_member_created(@member)
+        end
+
+        before_filter(:only => [:new, :edit]) do
           step = Refinery::Setting.find_or_set("memberships_default_account_validity", 12)
-          @activation_steps = []
-          1.upto(11) do | n |
-            @activation_steps << [t('months', :count => n), n] if n%step.to_i == 0
-          end
-          1.upto(10) do | n |
-            @activation_steps << [t('years', :count => n), n*12]
-          end
+
+          @activation_steps =  [
+            [t('1_month',:scope => 'refinery.admin.memberships.settings'),1],
+            [t('2_months',:scope => 'refinery.admin.memberships.settings') ,2],
+            [t('3_months',:scope => 'refinery.admin.memberships.settings') ,3],
+            [t('4_months',:scope => 'refinery.admin.memberships.settings') ,4],
+            [t('6_months',:scope => 'refinery.admin.memberships.settings') ,6],
+            [t('1_year',:scope => 'refinery.admin.memberships.settings') ,12],
+            [t('2_years',:scope => 'refinery.admin.memberships.settings') ,24],
+            [t('3_years',:scope => 'refinery.admin.memberships.settings') ,36],
+            [t('4_years',:scope => 'refinery.admin.memberships.settings') ,48],
+            [t('5_years',:scope => 'refinery.admin.memberships.settings') ,60]
+         ]
+        #original code
+         # @activation_steps = []
+         #  1.upto(11) do | n |
+         #    @activation_steps << [t('months', :count => n), n] if n%step.to_i == 0
+         #  end
+         #  1.upto(10) do | n |
+         #    @activation_steps << [t('years', :count => n), n*12]
+         #  end
         end
 
       	def index
@@ -79,7 +97,7 @@ module Refinery
           @member.extend!
           @member.reload
 
-          MembershipMailer.deliver_member_accepted(@member)
+          MembershipMailer.deliver_member_activated(@member)
 
           @members = [@member]
 
@@ -91,6 +109,8 @@ module Refinery
           @member.seen!
           @member.enable!
           @member.reload
+
+          MembershipMailer.deliver_member_activated(@member)
 
           #MembershipMailer.extension_confirmation_member(@member).deliver
           #MembershipMailer.extension_confirmation_admin(@member, current_refinery_user).deliver
@@ -105,6 +125,8 @@ module Refinery
           @member.seen!
           @member.disable!
           @member.reload
+
+          MembershipMailer.deliver_member_deleted(@member)
 
           #MembershipMailer.extension_confirmation_member(@member).deliver
           #MembershipMailer.extension_confirmation_admin(@member, current_refinery_user).deliver

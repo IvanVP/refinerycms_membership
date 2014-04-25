@@ -6,9 +6,11 @@ module Refinery
       acts_as_indexed :fields => [:first_name, :last_name]
 
       validates :first_name, :last_name, :presence => true
+     
 
       attr_accessible :membership_level, :first_name, :last_name, 
-                      :enabled, :add_to_member_until, :role_ids
+                      :enabled, :add_to_member_until, :role_ids,
+                      :password, :password_confirmation
 
       self.inheritance_column = :membership_level
 
@@ -41,7 +43,7 @@ module Refinery
 
       def email=(e)
         write_attribute(:email, e)
-        write_attribute(:username, e)
+        # write_attribute(:username, e) #My changes to allow username
       end
 
       def enabled=(e)
@@ -52,7 +54,7 @@ module Refinery
       end
 
       def mail_data
-        allowed_attributes = %w(email first_name last_name)
+        allowed_attributes = %w(username email first_name last_name)
         d = attributes.to_hash
         d.reject!{|k,v| !allowed_attributes.include?(k.to_s)}
         d[:activation_url] = Rails.application.routes.url_helpers.activate_members_url(:confirmation_token => self.confirmation_token) if Refinery::Setting::find_or_set('memberships_confirmation', 'admin') == 'email'

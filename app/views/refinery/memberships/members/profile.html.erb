@@ -2,11 +2,9 @@
     <%= render :partial => 'message' %>
   <%=raw @page.content_for(:body_above) if @page %>
   <%=raw @page.content_for(:body) if @page %>
-  <div id="member">
-    <%= render :partial => "static_account" %>
-    <%= render :partial => "static_profile" %>
-  </div>
-  <%= link_to t('.edit_profile'), edit_members_path %>
+  <%= render :partial => "profile" %>
+  <%= link_to t('refinery.members.shared.edit'), edit_members_path %>
+
   <%=raw @page.content_for(:body_below) if @page %>
 <% end %>
 

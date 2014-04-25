@@ -13,7 +13,7 @@
 	</p>
 	<h2><%= t('available_tags', :scope => 'refinery.admin.membership_emails.email_body_help') %></h2>
 	<p>
-	<%= t('user_data', :scope => 'refinery.admin.membership_emails.email_body_help') %>: [:email], [:first_name], [:last_name], [:title], [:organization], [:street_address], [:city], [:province], [:postal_code], [:phone], [:fax], [:website]
+	<%= t('user_data', :scope => 'refinery.admin.membership_emails.email_body_help') %>: [:username], [:email], [:first_name], [:last_name]
 	</p>
 	<% if Refinery::Setting.find_or_set('memberships_timed_accounts', true) %>
 	<p>

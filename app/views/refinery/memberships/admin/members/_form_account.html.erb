@@ -1,6 +1,8 @@
 <fieldset id="member_account_form">
   <legend><%=t('account', :scope => 'refinery.admin.members')%></legend>
   <p class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username, :class => 'widest'%>
       <%= f.label :email %>
       <%= f.text_field :email, :class => 'widest'%>
   </p>

@@ -11,17 +11,24 @@ en:
       shared:
         account: Account
         profile: Profile
-        organization: Organization
+        username: Username
+        email: Email
+        first_name: Name
+        last_name: Last Name
+        edit: Edit
+        password: Password
+        password_confirmation: Password confirmation
     admin:
       memberships_settings: Settings
       memberships:
         new_members: New users
+        add_member: Add user
         no_new_members: No new users
         settings_admin_notification:
           example: "Enter your email address, for example: jack@work.com, jill@office.com"
-          hint: When a new user signs up, Refinery will send them a notification
+          hint: "When a new user signs up, Refinery will send them a notification"
         settings:
-          signup_defaults: Defauls
+          signup_defaults: Defaults
           signup_confirmation: Signup confirmation
           no_confirmation: No confirmation
           email_confirmation: Confirmation by email
@@ -32,14 +39,27 @@ en:
           default_expiration_in: "Default expiration for members"
           default_groups: Default groups for members
           assign_new_users_to_the_selected_groups: Assign new user to the selected group
+          1_month: "1 Month"
+          2_months: "2 Months"
+          3_months: "3 Months"
+          4_months: "4 Months"
+          6_months: "6 Months"
+          1_year: "1 year"
+          2_years: "2 years"
+          3_years: "3 years"
+          4_years: "4 years"
+          5_years: "5 years"
           no_groups_found: "No groups found"
       roles:
         delete: Delete group
+        title: Title
         no_roles_yet: No roles created yet
         edit: Edit group
         new_role: New group
         roles_administration: Group administration
       members:
+        new_member: "Новый пользователь"
+        name: "Name"
         accept: "Accept user registration"
         reject: "Reject user registration"
         edit: Edit user
@@ -61,8 +81,14 @@ en:
         all_members: All users
         members_administration: User administration
         account: Registration
-        organization: Organization
+        username: Username
+        email: Email
         profile: Profile
+        first_name: First name
+        last_name: Last name
+        full_name: Full name 
+        created_at: Created at
+        status: Status
         activation: Activation
         user_roles: "User's groups"
         user_can_login: User can login
@@ -127,12 +153,9 @@ en:
           cancel: Cancel
         form:
           blank_password_keeps_current: Leaving password blank keeps the current password
-          state_province: "Province/State"
-          postal_code: "Postal Code/ZIP"
         new:
           title: Membership Application Form
-          instructions: Please complete information. You will be notified
-            of your acceptance upon approval.
+          instructions: "Please complete information. You will be notified of your acceptance upon approval."
           submit_application: Submit Application
     activerecord:
       attributes:

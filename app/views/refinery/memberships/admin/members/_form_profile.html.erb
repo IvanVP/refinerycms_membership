@@ -1,12 +1,12 @@
 <fieldset id="member_profile_form">
   <legend><%=t('profile', :scope => 'refinery.admin.members')%></legend>
   <p class="field">
-      <%= f.label :first_name %>
+      <%= f.label t('first_name', :scope => 'refinery.admin.members')%>
       <%= f.text_field :first_name, :class => 'widest' %>
   </p>
  
   <p class="field">
-      <%= f.label :last_name %>
+      <%= f.label t('last_name', :scope => 'refinery.admin.members')%>
       <%= f.text_field :last_name, :class => 'widest' %>
   </p>
 </fieldset>

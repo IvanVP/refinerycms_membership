@@ -13,7 +13,7 @@ module Refinery
           :redirect_to_url => "refinery.admin_memberships_path" # Refinery::Crud generates memberships_admin_member_path
 
         before_filter do
-          columns = [[:last_name, :first_name], [:organization], [:email], [:created_at]]
+          columns = [[:last_name, :first_name], [:username], [:email], [:created_at]]
           params[:order_by] ||= 0
           params[:order_dir] ||= 'asc'
           unless columns[params[:order_by].to_i]
