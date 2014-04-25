@@ -2,7 +2,7 @@
 
 __A role based membership engine for [refinerycms](http://refinerycms.com)__
 
-
+***** My Note *****
 This is just another version of Memberships engine for Refinery CMS adapted for my project.
 Here are all basic functions from main Memberships engine but with some minor changes. 
 I've changed (deleted) some user fields and added possibility to add member from Admin side Membership tab.
@@ -19,7 +19,7 @@ Refinery CMS version 2.0.3 or above.
 Open up your ``Gemfile`` and add at the bottom this line:
 
 ```ruby
-gem 'refinerycms-memberships', :git => 'https://github.com/IvanVP/refinerycms_membership.git'
+gem 'refinerycms-memberships', :git => 'https://github.com/IvanVP/refinerycms_membership.git', :branch => 'master'
 ```
 
 Now, run 
